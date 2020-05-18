@@ -4,8 +4,7 @@ import time
 import liste_mit_anzahl_der_wörter
 import exel
 
-# 2. versuch
-
+#neuer versuch
 if __name__ == "__main__":  # der teil wird nur ausgeführt wenn man die datei direkt ausführt nicht aber wenn man die Datei importiert
 
     untergrenze = ""
