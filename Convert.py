@@ -14,7 +14,10 @@ def convert(buchstaben):  # Buchstaben werden in Zahlen convertiert, damit man s
     elif buchstaben == "ß":
         erg = 18
     elif 64 < ord(buchstaben) < 91:  # wenn es Großbuchstaben sind
-        erg = (ord(buchstaben) - 65)
+        nummer_buchstabe = ord(buchstaben)
+        erg = nummer_buchstabe - 64 + ((nummer_buchstabe - 64) - 1)
     else:  # wenn es Kleinbuchstaben sind
-        erg = (ord(buchstaben) - 97)
+        nummer_buchstabe = ord(buchstaben)
+        erg = nummer_buchstabe - 96 + ((nummer_buchstabe - 96))
+
     return erg  # das Ergebnis des Buchstabens wird zurückgegeben

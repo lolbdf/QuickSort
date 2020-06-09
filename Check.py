@@ -15,7 +15,7 @@ def check_links(liste, pivot, links,
                                                                        index]):  # Wenn die Buchstaben gleich sind, selbe function aber mit Index + 1 (also nächster Buchstabe) -->rekursion
             return check_links(liste, pivot, links, index + 1)
 
-    except IndexError:  # sollten die Buchstaben nicht gleichlang sein
+    except IndexError:  # sollten die Wörter nicht gleichlang sein
         if len(liste[links]) > len(liste[pivot]):  # wenn links länger als Pivot return False
             return False
 

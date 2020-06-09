@@ -7,6 +7,7 @@ def teilung(liste, erstes, letztes):
 
 
     pivot = erstes  # Pivot element soll immer das erste Element sein
+    print(pivot)
 
     position_links = erstes  # das erste element ist immer das linke
 
