@@ -18,4 +18,4 @@ def create(Wort_Anzahl):
                     wort_list[k] = chr(ord(wort_list[k]) - 32)
             wort = wort + wort_list[k]
         liste.append(wort)
-    return ["Asdf", "aabcd"]
+    return liste

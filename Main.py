@@ -142,7 +142,7 @@ if __name__ == "__main__":  # der teil wird nur ausgeführt wenn man die datei d
             datei_schreiben = Listen_Dateien.neue_datei()
 
         start_time = time.time()
-
+        print("startet sortieren")
         erg = Quicksort.quicksort(Liste, 0, len(Liste) - 1)  # sortierte Liste wird in erg gespeichert
 
         finish_time = time.time() - start_time
