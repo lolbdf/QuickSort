@@ -18,8 +18,8 @@ def teilung(list, low, high):
 
         if low < high:
             list[low], list[high] = list[high], list[low]
-        else:
-            break
+
+
     if not Check.check_links(pivot, list[low]):
         list[high_cache], list[low] = list[low], list[high_cache]
 

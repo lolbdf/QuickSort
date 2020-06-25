@@ -41,6 +41,8 @@ def check_rechts(pivot, rechts, index=0):
             return False
         elif ord(rechts[0]) > ord(pivot[0]):
             return True
+        else:
+            return False
 
     try:
         if Convert.convert(rechts[index]) == Convert.convert(pivot[index]):

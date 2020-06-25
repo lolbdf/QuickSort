@@ -1,32 +1,40 @@
-def quicksort(L, anfang, ende):
-    if L != []:
-        pivot = L[anfang]
-        links = anfang
-        rechts = ende
-        while links <= rechts:
-            while L[links] < pivot:
-                links = links + 1
-            while L[rechts] > pivot:
-                rechts = rechts - 1
-            if links <= rechts:
-                if links < rechts:
-                    h = L[links]
-                    L[links] = L[rechts]
-                    L[rechts] = h
-                links = links + 1
-                rechts = rechts - 1
-            print(L)
-            print(anfang, ende, links, rechts)
-        print()
-        if anfang < rechts:
-            L = quicksort(L, anfang, rechts)
-        if links < ende:
-            L = quicksort(L, links, ende)
-    return L
+def teilung(list, low, high):
+
+    print("Teilung")
+
+    pivot = list[high]
+
+    low_cache = low
+
+    high_cache = high
+
+    while low < high:
+
+        print("Schleife eins")
+
+        while high > low_cache and list[high] > pivot:
+            high -= 1
+
+        while low < high_cache and list[low] < pivot:
+            low += 1
+
+        if low < high:
+            list[low], list[high] = list[high], list[low]
 
 
-# Test
-L = [25, 17, 32, 56, 25, 19, 8, 66, 29, 6, 20, 29]
-print(L)
-L = quicksort(L, 0, len(L) - 1)
-print(L)
+    if list[low] > list[high_cache]:
+        list[high_cache], list[low] = list[low], list[high_cache]
+
+    return low
+
+def quicksort(liste, erstes, letztes):  # rekursive Funktion
+
+    if erstes < letztes:
+        pivot = teilung(liste, erstes, letztes)  # erster Durchlauf mit kompletter Liste von anfang bis Ende
+        quicksort(liste, erstes, pivot - 1)
+        quicksort(liste, pivot + 1, letztes)
+
+    return liste  # Die geordnete Liste wird zurückgegeben
+
+LISTE = [4,6,13,6,8,7,2,1,4]
+print(quicksort(LISTE,0,len(LISTE)-1))
